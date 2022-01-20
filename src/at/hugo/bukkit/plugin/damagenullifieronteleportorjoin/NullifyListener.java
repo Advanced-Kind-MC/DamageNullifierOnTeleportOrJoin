@@ -125,7 +125,6 @@ public class NullifyListener implements Listener {
         public final int foodLevel;
         public final float saturation;
         public final float exhaustion;
-        public final Collection<PotionEffect> potionEffects;
 
         public PlayerInfo(final BukkitTask removalTask, final BossBarTimer bossBarTask, final Player player) {
             this.removalTask = removalTask;
@@ -134,7 +133,6 @@ public class NullifyListener implements Listener {
             this.foodLevel = player.getFoodLevel();
             this.saturation = player.getSaturation();
             this.exhaustion = player.getExhaustion();
-            this.potionEffects = player.getActivePotionEffects();
         }
 
         public void applyToPlayer(final Player player) {
@@ -142,7 +140,6 @@ public class NullifyListener implements Listener {
             player.setFoodLevel(foodLevel);
             player.setExhaustion(exhaustion);
             player.setSaturation(saturation);
-            player.addPotionEffects(potionEffects);
         }
     }
 }
